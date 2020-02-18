@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <h1>臺北旅遊網 遊憩景點</h1>
     </div>
     <router-view />
   </div>
@@ -15,10 +14,12 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color: #fafafc;
 }
 
 #nav {
-  padding: 30px;
+  height: 8vw;
+  padding: 10px;
 
   a {
     font-weight: bold;
