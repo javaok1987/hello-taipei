@@ -52,7 +52,7 @@ const httpRequest = {
           params,
         })
         .then((response) => {
-          resolve(response.data);
+          resolve(response);
         })
         .catch((error) => {
           reject(error);
@@ -65,7 +65,7 @@ const httpRequest = {
       service
         .post(url, params)
         .then((response) => {
-          resolve(response.data);
+          resolve(response);
         })
         .catch((error) => {
           reject(error);
@@ -80,7 +80,7 @@ const httpRequest = {
           params,
         })
         .then((response) => {
-          resolve(response.data);
+          resolve(response);
         })
         .catch((error) => {
           reject(error);
@@ -93,7 +93,7 @@ const httpRequest = {
       service
         .put(url, params)
         .then((response) => {
-          resolve(response.data);
+          resolve(response);
         })
         .catch((error) => {
           reject(error);
