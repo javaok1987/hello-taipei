@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { FETCH_ATTRACTIONS } from '@/store/actions.type';
+import { FETCH_ATTRACTION_LIST } from '@/store/actions.type';
 
 import SearchBar from '@/components/SearchBar';
 import SearchResultTable from '@/components/SearchResultTable';
@@ -27,7 +27,7 @@ export default {
     return next();
   },
   async beforeRouteEnter(to, from, next) {
-    await store.dispatch(`listModule/${FETCH_ATTRACTIONS}`);
+    await store.dispatch(`${FETCH_ATTRACTION_LIST}`);
     return next();
   },
   async beforeRouteLeave(to, from, next) {

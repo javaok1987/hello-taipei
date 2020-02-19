@@ -6,9 +6,8 @@
 import * as MUTATIONS from '@/store/mutations.type';
 import * as ACTIONS from '@/store/actions.type';
 
-import { createNamespacedHelpers } from 'vuex';
+import { mapState, mapActions, mapGetters, mapMutations } from 'vuex';
 
-const { mapState, mapActions, mapGetters, mapMutations } = createNamespacedHelpers('listModule');
 export default {
   name: 'SearchBar',
   computed: {},

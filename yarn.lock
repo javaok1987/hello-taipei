@@ -3169,6 +3169,11 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+es6-promise@^4.0.5:
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
+  integrity sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==
+
 escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
@@ -3969,6 +3974,13 @@ globule@^1.0.0:
     glob "~7.1.1"
     lodash "~4.17.12"
     minimatch "~3.0.2"
+
+google-maps-api-loader@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/google-maps-api-loader/-/google-maps-api-loader-1.1.1.tgz#b600602451300521ba1b5d7493e7071d7931ac00"
+  integrity sha512-+bxumYl6WCxKDjygLFF2FxrNyKIB0QgWKFb+EZ6F5wt/MoU2cm/8se9uQ0o1nY7389F2qe6ocdpSFn1bKQAD5w==
+  dependencies:
+    es6-promise "^4.0.5"
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.2:
   version "4.2.3"
@@ -8632,6 +8644,11 @@ ws@^6.0.0, ws@^6.2.1:
   integrity sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
   dependencies:
     async-limiter "~1.0.0"
+
+xss-filters@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/xss-filters/-/xss-filters-1.2.7.tgz#59fa1de201f36f2f3470dcac5f58ccc2830b0a9a"
+  integrity sha1-Wfod4gHzby80cNysX1jMwoMLCpo=
 
 xtend@^4.0.0, xtend@~4.0.1:
   version "4.0.2"

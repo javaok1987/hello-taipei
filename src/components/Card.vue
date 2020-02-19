@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <a :href="url" target="_blank">
+    <router-link :to="`/about/${aid}`" class="card-link">
       <div class="card-thumb">
         <figure>
           <img :src="getAvatar" :alt="name" />
@@ -11,12 +11,15 @@
       </div>
       <div class="card-content">
         <div class="card-content__header" :title="name">{{ name }}</div>
+        <div class="card-content__address" :title="address">
+          {{ address }}
+        </div>
         <div class="card-content__description">
           {{ introduction }}
         </div>
         <TagList :tags="category"></TagList>
       </div>
-    </a>
+    </router-link>
   </div>
 </template>
 
@@ -29,6 +32,11 @@ export default {
     TagList,
   },
   props: {
+    aid: {
+      type: Number,
+      required: true,
+      default: 0,
+    },
     name: {
       type: String,
       required: true,
@@ -40,6 +48,11 @@ export default {
       default: '',
     },
     distric: {
+      type: String,
+      required: false,
+      default: '',
+    },
+    address: {
       type: String,
       required: false,
       default: '',
@@ -84,29 +97,52 @@ export default {
   border-bottom: 2px solid #f1f1f1;
   vertical-align: top;
   overflow: hidden;
+
   &:hover {
     border-color: #d8d8d8;
+    .card-thumb::before {
+      background-color: #333333;
+      opacity: 0.35;
+    }
   }
+}
+
+.card-link {
+  width: 100%;
 }
 
 .card-content {
   position: relative;
   padding: 20px 16px 10px 16px;
-  width: 100%;
+
   &__header {
     font-size: 1.375rem;
     margin-bottom: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 100%;
   }
+
+  &__address {
+    font-size: 1rem;
+    color: #a16946;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__description {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 1rem;
+  }
+
   &__meta {
     position: absolute;
     text-align: center;
     top: 5px;
     right: 5px;
-    background-color: #409eff;
+    background-color: #ba8baf;
     color: #fff;
     display: inline-block;
     font-size: 0.8rem;
@@ -121,11 +157,7 @@ export default {
     border: 1px solid #fff;
     border-radius: 50%;
   }
-  @media screen and (max-width: 425px) {
-    &__meta {
-      display: none;
-    }
-  }
+
   &__description {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -133,24 +165,48 @@ export default {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
+  @media screen and (max-width: 425px) {
+    &__meta {
+      display: none;
+    }
+  }
 }
+
 .card-thumb {
   position: relative;
   width: 100%;
   height: 30vw;
   max-height: 200px;
-  figure {
-    margin: 0;
+
+  &:before {
+    background-color: #fff;
+    pointer-events: none;
+    transition: background-color 0.5s ease, opacity 0.5s ease;
+    content: '';
     display: block;
     position: absolute;
-    background: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.4;
+  }
+
+  figure {
+    display: block;
+    position: absolute;
+    background-color: #fff;
     overflow: hidden;
     width: 100%;
     height: 100%;
   }
+
   img {
     position: absolute;
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

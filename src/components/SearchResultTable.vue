@@ -3,12 +3,13 @@
     <Card
       v-for="item in tableData"
       :key="item.id"
+      :aid="item.id"
       :name="item.name"
       :introduction="item.introduction"
       :distric="item.distric"
+      :address="item.address"
       :category="item.category"
       :images="item.images"
-      :url="item.url"
     ></Card>
   </section>
 </template>
@@ -17,9 +18,7 @@
 import * as MUTATIONS from '@/store/mutations.type';
 import * as ACTIONS from '@/store/actions.type';
 
-import { createNamespacedHelpers } from 'vuex';
-
-const { mapState, mapGetters, mapMutations, mapActions } = createNamespacedHelpers('listModule');
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 
 import Card from '@/components/Card';
 
