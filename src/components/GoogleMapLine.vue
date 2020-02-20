@@ -1,4 +1,4 @@
-<template> <div></div></template>
+<template> <div /></template>
 
 <script>
 import { LINE_PATH_CONFIG } from '@/constants/mapSettings';

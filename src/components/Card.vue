@@ -86,23 +86,25 @@ export default {
 
 <style lang="scss">
 .card {
-  transition: 0.3s;
   display: inline-flex;
-  flex-wrap: wrap;
-  width: 30vw;
-  max-width: 300px;
-  min-width: 300px;
-  margin: 5px 5px 40px;
-  background-color: #fff;
-  border-bottom: 2px solid #f1f1f1;
-  vertical-align: top;
   overflow: hidden;
+
+  width: 300px;
+  margin: 5px 5px 40px;
+
+  transition: 0.3s;
+  vertical-align: top;
+
+  border-bottom: 2px solid #f1f1f1;
+  background-color: $--color-ff;
+
+  flex-wrap: wrap;
 
   &:hover {
     border-color: #d8d8d8;
     .card-thumb::before {
-      background-color: #333333;
       opacity: 0.35;
+      background-color: #333;
     }
   }
 }
@@ -113,55 +115,69 @@ export default {
 
 .card-content {
   position: relative;
+
   padding: 20px 16px 10px 16px;
 
   &__header {
     font-size: 1.375rem;
-    margin-bottom: 10px;
+
     overflow: hidden;
-    text-overflow: ellipsis;
+
+    margin-bottom: 10px;
+
     white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &__address {
     font-size: 1rem;
-    color: #a16946;
+
     overflow: hidden;
-    text-overflow: ellipsis;
+
     white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #a16946;
   }
 
   &__description {
-    margin-top: 10px;
-    text-align: left;
     font-size: 1rem;
+
+    margin-top: 10px;
+
+    text-align: left;
   }
 
   &__meta {
+    font-size: 0.8rem;
+    line-height: 50px;
+
     position: absolute;
-    text-align: center;
     top: 5px;
     right: 5px;
-    background-color: #ba8baf;
-    color: #fff;
+
     display: inline-block;
-    font-size: 0.8rem;
+
     width: 8vw;
     max-width: 50px;
     height: 8vw;
     max-height: 50px;
-    line-height: 50px;
     padding: 0 6px;
+
     text-align: center;
     white-space: nowrap;
-    border: 1px solid #fff;
+
+    color: $--color-ff;
+    border: 1px solid $--color-ff;
     border-radius: 50%;
+    background-color: #ba8baf;
   }
 
   &__description {
-    overflow: hidden;
-    text-overflow: ellipsis;
     display: -webkit-box;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
@@ -175,41 +191,43 @@ export default {
 
 .card-thumb {
   position: relative;
+
   width: 100%;
   height: 30vw;
   max-height: 200px;
 
   &:before {
-    background-color: #fff;
-    pointer-events: none;
-    transition: background-color 0.5s ease, opacity 0.5s ease;
-    content: '';
-    display: block;
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+
+    display: block;
+
+    @include size(100%, 100%);
+
+    content: '';
+    transition: background-color 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
+
     opacity: 0.4;
+    background-color: $--color-ff;
   }
 
   figure {
-    display: block;
     position: absolute;
-    background-color: #fff;
+
+    display: block;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+
+    @include size(100%, 100%);
+
+    background-color: $--color-ff;
   }
 
   img {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    @include size(100%, auto);
+    @include center;
   }
 }
 </style>

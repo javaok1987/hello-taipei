@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <h1>臺北旅遊網 遊憩景點</h1>
-    </div>
+    <header>
+      <router-link :to="'/'">
+        <h1 class="app-logo">臺北旅遊網</h1>
+      </router-link>
+    </header>
     <router-view />
   </div>
 </template>
@@ -10,22 +12,19 @@
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+
+  text-align: center;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
+  header {
+    margin: 30px 0;
+  }
+  .app-logo {
+    display: inline-block;
 
-#nav {
-  height: 8vw;
-  padding: 10px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    width: auto;
+    border-bottom: 3px solid $--color-primary;
   }
 }
 </style>

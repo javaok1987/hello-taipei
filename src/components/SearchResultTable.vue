@@ -15,10 +15,7 @@
 </template>
 
 <script>
-import * as MUTATIONS from '@/store/mutations.type';
-import * as ACTIONS from '@/store/actions.type';
-
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import { mapState } from 'vuex';
 
 import Card from '@/components/Card';
 
@@ -41,11 +38,5 @@ export default {
       totalLen: (state) => state.total,
     }),
   },
-  methods: {},
 };
 </script>
-
-<style lang="scss">
-.search-result-table {
-}
-</style>

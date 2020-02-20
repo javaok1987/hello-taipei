@@ -5,11 +5,35 @@
     </header>
 
     <div class="about-content">
-      <div class="about-section">
+      <section class="about-section">
+        <h4>景點資訊</h4>
+        <div class="about-info">
+          <p v-if="attraction.tel.length !== 0">電話：{{ attraction.tel }}</p>
+          <p v-if="attraction.address.length !== 0">
+            地址：{{ attraction.address }}
+            <a :href="`https://www.google.com.tw/maps/place/${attraction.address}`" target="_blank">地圖</a>
+          </p>
+          <p v-if="attraction.target.length !== 0">
+            推薦對象：
+            <span v-for="item in attraction.target" :key="item.id"> {{ item.name }}｜ </span>
+          </p>
+          <p v-if="attraction.service.length !== 0">
+            服務設施：
+            <span v-for="item in attraction.service" :key="item.id"> {{ item.name }}｜ </span>
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h4>景點介紹</h4>
+        <!-- eslint-disable-next-line vue/no-v-html -->
+        <div class="about-intro" v-html="attractionIntro"></div>
+      </section>
+
+      <section v-if="attraction.images && attraction.images.length > 0" class="about-section">
+        <h4>景點照片</h4>
         <Carousel :items="attraction.images" @show-image="showModalImage"></Carousel>
-      </div>
-      <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="about-section about-intro" v-html="attractionIntro"></div>
+      </section>
     </div>
 
     <aside class="about-slider">
@@ -86,6 +110,9 @@ export default {
       };
     },
   },
+  mounted() {
+    document.getElementsByTagName('body')[0].classList.add('dom-ready');
+  },
   methods: {
     showModalImage(image) {
       this.modalImage = image;
@@ -97,8 +124,13 @@ export default {
 
 <style lang="scss">
 .about-wrapper {
-  margin: 10px auto;
   overflow: hidden;
+
+  margin: 10px auto;
+
+  a {
+    color: $--color-warning;
+  }
 }
 
 .about-header {
@@ -106,44 +138,58 @@ export default {
 }
 
 .about-content {
-  width: 70%;
   float: left;
-  @media screen and (max-width: 1080px) {
-    width: 100%;
+
+  width: 70%;
+  padding: 10px;
+
+  text-align: left;
+  h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  @media screen and (max-width: $breakpoint) {
     float: none;
+
+    width: 100%;
   }
 }
 
 .about-section {
   margin-bottom: 50px;
-  padding: 1rem;
-  @media screen and (max-width: 1080px) {
+  > div {
+    position: relative;
+
+    padding: 20px;
+
+    text-align: left;
+
+    border-bottom: 2px solid #f1f1f1;
+    background-color: $--color-ff;
+
+    &:hover {
+      border-color: #d8d8d8;
+    }
+  }
+  @media screen and (max-width: $breakpoint) {
     margin-bottom: 30px;
   }
 }
 
 .about-slider {
-  width: 29%;
   float: right;
-  border: solid 1px #ccc;
-  @media screen and (max-width: 1080px) {
-    width: 100%;
+
+  width: 29%;
+  margin-top: 30px;
+  @media screen and (max-width: $breakpoint) {
     float: none;
+
+    width: 100%;
+    margin-top: 0;
   }
 }
 
 .travel-map {
   height: 250px;
-}
-
-.about-intro {
-  text-align: left;
-  position: relative;
-  background: #fff;
-  border-bottom: 2px solid #f1f1f1;
-
-  &:hover {
-    border-color: #d8d8d8;
-  }
 }
 </style>

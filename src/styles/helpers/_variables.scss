@@ -1,0 +1,20 @@
+@charset 'utf-8';
+
+// == Font Family
+$body-font-family: 'Heiti TC', '微軟正黑體', 'Microsoft JhengHei', 'Apple LiGothic Medium', 'simhei', 'Microsoft YaHei',
+  'Helvetica', Helvetica, Arial, sans-serif;
+$font-family: 'Century Gothic', sans-serif, serif;
+
+// == Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+// == Layout
+$breakpoint: 1080px;
+
+// Color
+$--color-ff: #fff;
+$--color-primary: #86c1b9;
+$--color-warning: #ab4642;
+$--color-gray: #666a73;

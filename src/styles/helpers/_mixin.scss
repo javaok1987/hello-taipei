@@ -1,0 +1,87 @@
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+$base-font-size: 16px !default;
+@function px2rem($target-size, $context: $base-font-size) {
+  @if not unitless($target-size) {
+    $target-size: strip-units($target-size);
+  }
+  @if not unitless($context) {
+    $context: strip-units($context);
+  }
+  @return ($target-size / $context) * 1rem;
+}
+
+@mixin text-hide {
+  white-space: nowrap;
+  text-indent: 100%;
+  overflow: hidden;
+}
+
+@mixin clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin size($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+
+@mixin mask-box($w, $h) {
+  width: $w;
+  height: $h;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin abs-pos($x, $y) {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX($x) translateY($y);
+}
+@mixin blur-color($size, $color) {
+  background-color: $color;
+  filter: blur($size);
+  border-radius: 100%;
+}
+
+@mixin button-hover-effects($color) {
+  &:after {
+    content: ' ';
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 0;
+    border-bottom: 1px solid transparent;
+  }
+  &:hover {
+    &:after {
+      backface-visibility: hidden;
+      border-color: $color;
+      transition: width 350ms ease-in-out;
+      width: 100%;
+    }
+  }
+}

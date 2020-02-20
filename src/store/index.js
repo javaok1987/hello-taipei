@@ -30,7 +30,6 @@ const mutations = {
     state.attraction = state.attractionList.find(function(item) {
       return item.id === parseInt(payload, 10);
     });
-    console.log(state.attraction);
   },
   [SET_ATTRACTION_LIST](state, data) {
     state.attractionList = data;

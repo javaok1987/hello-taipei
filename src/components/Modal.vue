@@ -36,54 +36,68 @@ export default {
   z-index: 9998;
   top: 0;
   left: 0;
+
+  display: table;
+
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: table;
+
   transition: opacity 0.3s ease;
+
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-wrapper {
   display: table-cell;
+
   vertical-align: middle;
 }
 
 .modal-container {
+  font-family: Helvetica, Arial, sans-serif;
+
+  overflow: hidden;
+
   width: 87vw;
   height: 87vh;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+
   transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
-  overflow: hidden;
+
+  border-radius: 2px;
+  background-color: $--color-ff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
 }
 .modal-header {
-  height: 32px;
   position: relative;
+
+  height: 32px;
   h3 {
     margin-top: 0;
+
     color: #42b983;
   }
 }
 
 .modal-body {
-  margin: 20px 0;
+  overflow: hidden;
+
   width: 100%;
   height: calc(87vh - 37px - 120px);
-  overflow: hidden;
+  margin: 20px 0;
   .modal-image {
     width: auto;
     height: 100%;
+
     border-radius: 5px;
   }
 }
 
 .modal-footer {
-  height: 40px;
   line-height: 40px;
+
+  height: 40px;
 }
 
 .modal-enter {
@@ -101,10 +115,12 @@ export default {
 
 .close {
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
+
   width: 32px;
   height: 32px;
+
   opacity: 0.3;
   &:hover {
     opacity: 1;
@@ -113,9 +129,12 @@ export default {
   &:after {
     position: absolute;
     left: 15px;
-    content: ' ';
-    height: 33px;
+
     width: 2px;
+    height: 33px;
+
+    content: ' ';
+
     background-color: #333;
   }
   &:before {

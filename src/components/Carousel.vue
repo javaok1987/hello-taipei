@@ -57,24 +57,25 @@ export default {
 </script>
 
 <style lang="scss">
-$color-navy: #2c3e50;
-$color-navy-light: #3a5169;
-$color-teal: #42b883;
-$color-teal-light: #42b983;
-$color-gray: #666a73;
-
 .card-carousel-wrapper {
   display: flex;
+
+  margin: 20px 0 40px;
+
+  background-color: #fafafc !important;
+  border-bottom-width: 0 !important;
+  color: $--color-gray;
+
   align-items: center;
   justify-content: center;
-  margin: 20px 0 40px;
-  color: $color-gray;
 }
 
 .card-carousel {
   display: flex;
-  justify-content: center;
+
   width: 640px;
+
+  justify-content: center;
 
   &--overflow-container {
     overflow: hidden;
@@ -83,15 +84,18 @@ $color-gray: #666a73;
   &--nav__left,
   &--nav__right {
     display: inline-block;
+
+    box-sizing: border-box;
     width: 15px;
     height: 15px;
-    padding: 10px;
-    box-sizing: border-box;
-    border-top: 2px solid $color-teal;
-    border-right: 2px solid $color-teal;
-    cursor: pointer;
     margin: 0 20px;
+    padding: 10px;
+
+    cursor: pointer;
     transition: transform 150ms linear;
+
+    border-top: 2px solid $--color-primary;
+    border-right: 2px solid $--color-primary;
     &[disabled] {
       opacity: 0.2;
       border-color: black;
@@ -115,22 +119,28 @@ $color-gray: #666a73;
 
 .card-carousel-cards {
   display: inline-flex;
+
   transition: transform 150ms ease-out;
   transform: translatex(0px);
 
   .card-carousel--card {
-    margin: 0 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px 0 rgba(40, 44, 53, 0.06), 0 2px 2px 0 rgba(40, 44, 53, 0.08);
-    background-color: #fff;
-    border-radius: 4px;
-    z-index: 3;
-    margin-bottom: 2px;
     line-height: 95px;
+
     position: relative;
+    z-index: 3;
+
     overflow: hidden;
+
     width: 200px;
     height: 200px;
+    margin: 0 10px;
+    margin-bottom: 2px;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+    background-color: $--color-ff;
+    box-shadow: 0 4px 15px 0 rgba(40, 44, 53, 0.06), 0 2px 2px 0 rgba(40, 44, 53, 0.08);
 
     &:first-child {
       margin-left: 0;
@@ -141,11 +151,14 @@ $color-gray: #666a73;
     }
     figure {
       font-size: 0;
+
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+
       height: 200px;
+
+      transform: translate(-50%, -50%);
     }
 
     img {

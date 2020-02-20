@@ -21,22 +21,28 @@ export default {
 
 <style scoped lang="scss">
 .tag-list {
-  line-height: 22px;
   font-size: 0;
+  line-height: 22px;
+
+  overflow: hidden;
+
   height: 40px;
   padding: 0;
+
   text-align: left;
-  overflow: hidden;
   li {
     font-size: 12px;
+
     display: inline-block;
-    text-align: center;
+
+    margin-top: 10px;
     margin-right: 3px;
     padding: 0 5px;
-    background-color: #f2f2f2;
+
+    text-align: center;
+
     color: #666;
-    font-size: 12px;
-    margin-top: 10px;
+    background-color: #f2f2f2;
   }
 }
 </style>

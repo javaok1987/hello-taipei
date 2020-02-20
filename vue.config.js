@@ -30,7 +30,16 @@ module.exports = {
       filename: 'index.html',
     },
   },
-  // publicPath: debugMode ? '/' : '/building',
+  // css相關配置.
+  css: {
+    // 開啟 CSS source maps.
+    sourceMap: debugMode,
+    loaderOptions: {
+      scss: {
+        prependData: `@import "./src/styles/base.scss";`,
+      },
+    },
+  },
   publicPath: '/',
   outputDir: 'dist',
   lintOnSave: debugMode,
@@ -42,7 +51,6 @@ module.exports = {
       },
     },
   },
-  filenameHashing: false,
   chainWebpack(config) {
     // set preserveWhitespace
     config.module
@@ -57,7 +65,7 @@ module.exports = {
 
     config
       // https://webpack.js.org/configuration/devtool/#development
-      .when(process.env.NODE_ENV === 'development', (config) => config.devtool('cheap-source-map'));
+      .when(debugMode, (config) => config.devtool('cheap-source-map'));
 
     config.when(process.env.NODE_ENV === 'production', (config) => {
       config.optimization.splitChunks({
