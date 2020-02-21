@@ -117,7 +117,7 @@ export default {
   async beforeRouteEnter(to, from, next) {
     await store.dispatch(`${FETCH_ATTRACTION_INFO}`, to.params.attractionID);
     if (!store.state.attraction) {
-      return next('./');
+      return next('/list');
     }
     return next();
   },

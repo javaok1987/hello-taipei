@@ -27,7 +27,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.NODE_ENV === 'development' ? '/' : '/hello-taipei',
+  base: process.env.NODE_ENV === 'development' ? '/' : '/hello-taipei/',
   scrollBehavior: () => ({ y: 0 }),
   routes,
 });

@@ -10,7 +10,6 @@ const debugMode = process.env.NODE_ENV === 'development';
 // All configuration item explanations can be find in https://cli.vuejs.org/config/
 module.exports = {
   devServer: {
-    // proxy: 'https://www.travel.taipei', // 設置代理.
     proxy: {
       '/api': {
         target: 'https://www.travel.taipei',
@@ -40,7 +39,7 @@ module.exports = {
       },
     },
   },
-  publicPath: '/',
+  publicPath: debugMode ? '/' : '/hello-taipei/',
   outputDir: 'dist',
   lintOnSave: debugMode,
   productionSourceMap: false,
