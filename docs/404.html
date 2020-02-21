@@ -1,41 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Single Page Apps for GitHub Pages</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafrex/spa-github-pages
-      // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-      // ----------------------------------------------------------------------
-      // This script takes the current url and converts the path and query
-      // string into just a query string, and then redirects the browser
-      // to the new url with only a query string and hash fragment,
-      // e.g. http://www.foo.tld/one/two?a=b&c=d#qwe, becomes
-      // http://www.foo.tld/?p=/one/two&q=a=b~and~c=d#qwe
-      // Note: this 404.html file must be at least 512 bytes for it to work
-      // with Internet Explorer (it is currently > 512 bytes)
+<html lang="zh-Hant-TW">
 
-      // If you're creating a Project Pages site and NOT using a custom domain,
-      // then set segmentCount to 1 (enterprise users may need to set it to > 1).
-      // This way the code will only replace the route part of the path, and not
-      // the real directory in which the app resides, for example:
-      // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
-      // https://username.github.io/repo-name/?p=/one/two&q=a=b~and~c=d#qwe
-      // Otherwise, leave segmentCount as 0.
-      var segmentCount = 0;
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="./favicon.ico">
+  <title>臺北旅遊網</title>
+  <style>[v-cloak]{display:none}#app{display:none}#loader{position:absolute;left:50%;top:50%;z-index:1;width:150px;height:150px;margin:-75px 0 0 -75px;border:5px solid #f3f3f3;animation:spin 1s linear infinite;border-top:5px solid #86c1b9;border-radius:50%;width:50px;height:50px}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.animate-bottom{position:relative;animation-name:animatebottom;animation-duration:1s}@keyframes animatebottom{from{bottom:-100px;opacity:0}to{bottom:0;opacity:1}}</style>
+  <link rel="stylesheet" href="./css/chunk-libs.391ed6f9.css" />
+  <link rel="stylesheet" href="./css/index.be8f2762.css" />
+</head>
 
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+<body>
+  <div id="loader"></div>
+  <div id="app"></div>
+  <script src="./js/chunk-libs.4843557d.js"></script>
+  <script src="./js/index.c673bb46.js"></script>
+</body>
 
-    </script>
-  </head>
-  <body>
-  </body>
 </html>
