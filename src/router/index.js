@@ -8,6 +8,11 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
+    name: 'Home',
+    component: List,
+  },
+  {
+    path: '/list',
     name: 'List',
     component: List,
   },
@@ -17,7 +22,7 @@ const routes = [
     props: true,
     component: About,
   },
-  { path: '*', redirect: '/' },
+  { path: '*', redirect: '/list' },
 ];
 
 const router = new VueRouter({
