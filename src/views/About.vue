@@ -65,16 +65,6 @@ import store from '@/store';
 
 export default {
   name: 'About',
-  async beforeRouteUpdate(to, from, next) {
-    return next();
-  },
-  async beforeRouteEnter(to, from, next) {
-    await store.dispatch(`${FETCH_ATTRACTION_INFO}`, to.params.attractionID);
-    return next();
-  },
-  async beforeRouteLeave(to, from, next) {
-    next();
-  },
   components: {
     Carousel,
     Modal,
@@ -119,6 +109,20 @@ export default {
       this.showModal = true;
     },
   },
+  async beforeRouteUpdate(to, from, next) {
+    return next();
+  },
+  async beforeRouteEnter(to, from, next) {
+    await store.dispatch(`${FETCH_ATTRACTION_INFO}`, to.params.attractionID);
+    if (!store.state.attraction) {
+      next('/');
+    }
+
+    return next();
+  },
+  async beforeRouteLeave(to, from, next) {
+    next();
+  },
 };
 </script>
 
@@ -129,7 +133,12 @@ export default {
   margin: 10px auto;
 
   a {
-    color: $--color-warning;
+    color: $--color-primary;
+    &:hover {
+      font-weight: $font-weight-bold;
+      border-bottom: 1px solid $--color-warning;
+      color: $--color-warning;
+    }
   }
 }
 

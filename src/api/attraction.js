@@ -5,5 +5,7 @@ import request from '@/common/request';
  */
 export function fetchAttractionList(data) {
   // return request.get('/api/open-api/zh-tw/Attractions/All', data);
-  return request.get('//raw.githubusercontent.com/javaok1987/hello-taipei/master/src/data/Attractions.json', data);
+  return request.get(
+    `//script.google.com/macros/s/AKfycbwmm6b303YGJvvNXtRR_TP5ErCiX60Y9HOpj9t27l_LFHXYE5o/exec?url=https://www.travel.taipei/open-api/zh-tw/Attractions/All&categoryIds=${data.categoryIds}&page=${data.page}`
+  );
 }

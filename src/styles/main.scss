@@ -82,7 +82,10 @@ figure {
 }
 
 .dom-ready {
-  opacity: 1;
-  transition: opacity 0.5s;
-  background: transparent;
+  #app {
+    display: block;
+  }
+  #loader {
+    display: none;
+  }
 }

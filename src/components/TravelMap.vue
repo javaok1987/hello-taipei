@@ -1,5 +1,5 @@
 <template>
-  <GoogleMapLoader :map-config="mapConfig" api-key="">
+  <GoogleMapLoader :map-config="mapConfig" api-key="AIzaSyDKefBO8elLL_dzNOd94xHk93vd0IFAes8">
     // insert your google maps api key to render styled map
     <template slot-scope="{ google, map }">
       <GoogleMapMarker :marker="marker" :google="google" :map="map" />

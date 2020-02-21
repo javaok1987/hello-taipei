@@ -6,7 +6,7 @@ const service = axios.create({
   // withCredentials: true, // send cookies when cross-domain requests
   timeout: 15000, // request timeout
   headers: {
-    'Content-Type': 'application/json;charset=UTF-8',
+    'Content-Type': 'text/html; charset=utf-8',
   },
 });
 
