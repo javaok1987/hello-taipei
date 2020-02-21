@@ -11,7 +11,7 @@
 import GoogleMapLoader from '@/components/GoogleMapLoader';
 import GoogleMapMarker from '@/components/GoogleMapMarker';
 
-import { mapSettings } from '@/constants/mapSettings';
+import { mapSettings } from '@/common/mapSettings';
 
 export default {
   components: {

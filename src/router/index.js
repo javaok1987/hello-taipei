@@ -17,7 +17,7 @@ const routes = [
     props: true,
     component: About,
   },
-  { path: '*', redirect: '/list' },
+  { path: '*', redirect: '/' },
 ];
 
 const router = new VueRouter({

@@ -11,7 +11,9 @@
           <p v-if="attraction.tel.length !== 0">電話：{{ attraction.tel }}</p>
           <p v-if="attraction.address.length !== 0">
             地址：{{ attraction.address }}
-            <a :href="`https://www.google.com.tw/maps/place/${attraction.address}`" target="_blank">地圖</a>
+            <a :href="`https://www.google.com.tw/maps/dir//${attraction.nlat},${attraction.elong}`" target="_blank"
+              >導航</a
+            >
           </p>
           <p v-if="attraction.target.length !== 0">
             推薦對象：
@@ -115,9 +117,8 @@ export default {
   async beforeRouteEnter(to, from, next) {
     await store.dispatch(`${FETCH_ATTRACTION_INFO}`, to.params.attractionID);
     if (!store.state.attraction) {
-      next('/');
+      return next('./');
     }
-
     return next();
   },
   async beforeRouteLeave(to, from, next) {
