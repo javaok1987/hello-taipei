@@ -12,17 +12,12 @@ const routes = [
     component: List,
   },
   {
-    path: '/list',
-    name: 'List',
-    component: List,
-  },
-  {
     path: '/:attractionID',
     name: 'About',
     props: true,
     component: About,
   },
-  { path: '*', redirect: '/list' },
+  { path: '*', redirect: '/' },
 ];
 
 const router = new VueRouter({
