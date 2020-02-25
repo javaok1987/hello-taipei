@@ -1,24 +1,20 @@
-# hello-taipei
+# HELLO TAIPEI
 
-## Project setup
-```
+> 臺北旅遊網
+
+### Technology colophon
+- Vue.js
+- Google Map API
+
+### Quick start
+
+``` bash
+# install dependencies
 yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+# serve with hot reload at localhost:3000
+yarn start
 
-### Compiles and minifies for production
-```
+# build for production with minification
 yarn build
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
