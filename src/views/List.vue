@@ -24,7 +24,9 @@ export default {
     return next();
   },
   async beforeRouteEnter(to, from, next) {
-    await store.dispatch(`${FETCH_ATTRACTION_LIST}`);
+    if (!store.state.attractionList) {
+      await store.dispatch(`${FETCH_ATTRACTION_LIST}`);
+    }
     return next();
   },
   async beforeRouteLeave(to, from, next) {

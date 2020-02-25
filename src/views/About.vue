@@ -2,6 +2,9 @@
   <div class="about-wrapper">
     <header class="about-header">
       <h3>{{ attraction.name }}</h3>
+      <router-link :to="'/'" class="back-home">
+        回首頁
+      </router-link>
     </header>
 
     <div class="about-content">
@@ -11,9 +14,9 @@
           <p v-if="attraction.tel.length !== 0">電話：{{ attraction.tel }}</p>
           <p v-if="attraction.address.length !== 0">
             地址：{{ attraction.address }}
-            <a :href="`https://www.google.com.tw/maps/dir//${attraction.nlat},${attraction.elong}`" target="_blank"
-              >導航</a
-            >
+            <a :href="`https://www.google.com.tw/maps/dir//${attraction.nlat},${attraction.elong}`" target="_blank">
+              導航
+            </a>
           </p>
           <p v-if="attraction.target.length !== 0">
             推薦對象：
@@ -50,10 +53,17 @@
         <p>{{ modalImage.subject ? modalImage.subject : '' }}</p>
       </template>
     </Modal>
+
+    <back-to-top>
+      <div class="back-to-top">
+        <img alt="back-to-top" src="../assets/backtop.png" />
+      </div>
+    </back-to-top>
   </div>
 </template>
 
 <script>
+import BackToTop from 'vue-backtotop';
 import XSSFilters from 'xss-filters';
 
 import Carousel from '@/components/Carousel';
@@ -71,6 +81,7 @@ export default {
     Carousel,
     Modal,
     TravelMap,
+    BackToTop,
   },
   props: {
     attractionID: {
@@ -145,6 +156,7 @@ export default {
 
 .about-header {
   text-align: left;
+  position: relative;
 }
 
 .about-content {
@@ -201,5 +213,23 @@ export default {
 
 .travel-map {
   height: 250px;
+}
+
+.back-to-top {
+  width: 28px;
+  height: 46px;
+  overflow: hidden;
+  &:hover {
+    border-bottom: 0 !important;
+    img {
+      transform: translateX(-38px);
+    }
+  }
+}
+
+.back-home {
+  position: absolute;
+  right: 0;
+  bottom: 12px;
 }
 </style>
