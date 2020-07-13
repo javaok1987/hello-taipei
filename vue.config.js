@@ -35,7 +35,7 @@ module.exports = {
     sourceMap: debugMode,
     loaderOptions: {
       scss: {
-        prependData: `@import "./src/styles/base.scss";`,
+        additionalData: `@import "./src/styles/base.scss";`,
       },
     },
   },
